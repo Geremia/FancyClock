@@ -20,6 +20,10 @@ private:
 
 private slots:
     void updateTime();
+    void showContextMenu(const QPoint &pos);
+
+protected:
+    void mouseReleaseEvent(QMouseEvent *);
 };
 
 #endif // MAINWINDOW_H
