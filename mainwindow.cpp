@@ -54,5 +54,15 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *e)
 if (e->button() == Qt::RightButton)
     emit customContextMenuRequested(e->pos());
 else
-    MainWindow::mouseReleaseEvent(e);
+    QMainWindow::mouseReleaseEvent(e);
+}
+
+void MainWindow::mouseMoveEvent(QMouseEvent *e)
+{
+    m_mousepos = e->pos();
+}
+
+void MainWindow::mousePressEvent(QMouseEvent *e)
+{
+    this->move(e->globalPos()-m_mousepos);
 }
