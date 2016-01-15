@@ -18,3 +18,7 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
+
+LDFLAGS  += "-L/usr/lib64"
+
+CONFIG += c++11
