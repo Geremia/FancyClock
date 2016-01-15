@@ -20,7 +20,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &MainWindow::updateTime);
-    timer->start(1);
+    timer->start(1); //1 → 1 ms granularity
+
+    QSettings sts;
+    restoreGeometry(sts.value("MainGeometry"));
+    restoreState(sts.value("MainState"));
 
     updateTime();
 }
