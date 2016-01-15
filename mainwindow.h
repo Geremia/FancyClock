@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QPoint m_mousepos;
 
 private slots:
     void updateTime();
@@ -24,6 +25,9 @@ private slots:
 
 protected:
     void mouseReleaseEvent(QMouseEvent *);
+    void mouseMoveEvent(QMouseEvent *);
+    void mousePressEvent(QMouseEvent *);
+
 };
 
 #endif // MAINWINDOW_H
