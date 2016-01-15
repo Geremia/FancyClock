@@ -3,6 +3,7 @@
 #include <QMouseEvent>
 #include <QMenu>
 #include <QAction>
+#include <QSettings>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -65,4 +66,12 @@ void MainWindow::mouseMoveEvent(QMouseEvent *e)
 void MainWindow::mousePressEvent(QMouseEvent *e)
 {
     this->move(e->globalPos()-m_mousepos);
+}
+
+void MainWindow::closeEvent(QCloseEvent *e)
+{
+    QSettings settings;
+    settings.setValue("MainGeometry", saveGeometry());
+    settings.setValue("MainState", saveState());
+    e->accept();
 }
