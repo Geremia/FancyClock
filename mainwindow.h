@@ -27,6 +27,7 @@ protected:
     void mouseReleaseEvent(QMouseEvent *);
     void mouseMoveEvent(QMouseEvent *);
     void mousePressEvent(QMouseEvent *);
+    void closeEvent(QCloseEvent *);
 
 };
 
