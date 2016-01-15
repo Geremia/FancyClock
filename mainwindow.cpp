@@ -23,8 +23,8 @@ MainWindow::MainWindow(QWidget *parent) :
     timer->start(1); //1 → 1 ms granularity
 
     QSettings sts;
-    restoreGeometry(sts.value("MainGeometry"));
-    restoreState(sts.value("MainState"));
+    restoreGeometry(sts.value("MainGeometry").toByteArray());
+    restoreState(sts.value("MainState").toByteArray());
 
     updateTime();
 }
@@ -38,11 +38,11 @@ void MainWindow::updateTime()
 {
     QTime currentTime = QTime::currentTime();
     QString currentTimeText = currentTime.toString("hh:mm:ss.zzz");
-    if (currentTime.second() % 2 == 0)
+    if (currentTime.second() % 3 == 0)
         currentTimeText[2] = ' ';
     else
         currentTimeText[5] = ' ';
-    if (currentTime.second() % 3 == 0)
+    if (currentTime.second() % 2 == 0)
         currentTimeText[8] = ' ';
     ui->lcdNumber->display(currentTimeText);
 }
