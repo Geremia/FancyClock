@@ -5,8 +5,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    a.setOrganizationName(QString("Geremia"));
-    a.setApplicationName(QString("Fancy Clock"));
+    a.setOrganizationName("Geremia");
+    a.setApplicationName("Fancy Clock");
 
 
     QWidget wid;
