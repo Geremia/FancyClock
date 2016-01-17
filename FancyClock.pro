@@ -13,11 +13,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    preference.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    preference.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    preference.ui
 
 LDFLAGS  += "-L/usr/lib64"
 

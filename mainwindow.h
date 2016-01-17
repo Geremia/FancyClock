@@ -18,10 +18,12 @@ public:
 private:
     Ui::MainWindow *ui;
     QPoint m_mousepos;
+    void setColor();
 
 private slots:
     void updateTime();
     void showContextMenu(const QPoint &pos);
+    void showPreference();
 
 protected:
     void mouseReleaseEvent(QMouseEvent *);

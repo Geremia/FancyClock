@@ -6,6 +6,7 @@
 #include <QSettings>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "preference.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -26,12 +27,38 @@ MainWindow::MainWindow(QWidget *parent) :
     restoreGeometry(sts.value("MainGeometry").toByteArray());
     restoreState(sts.value("MainState").toByteArray());
 
+    //restore color
+    setColor();
+
     updateTime();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setColor()
+{
+    QSettings sts;
+    int i = sts.value("Color").toInt();
+    QPalette c;
+    switch (i) {
+    case 0:
+        c.setColor(QPalette::Foreground, Qt::black);
+        break;
+    case 1:
+        c.setColor(QPalette::Foreground, Qt::white);
+        break;
+    case 2:
+        c.setColor(QPalette::Foreground, Qt::green);
+        break;
+    case 3:
+        c.setColor(QPalette::Foreground, Qt::red);
+        break;
+    }
+    ui->lcdNumber->setPalette(c);
+    this->update();
 }
 
 void MainWindow::updateTime()
@@ -50,8 +77,16 @@ void MainWindow::updateTime()
 void MainWindow::showContextMenu(const QPoint &pos)
 {
     QMenu contextMenu;
-    contextMenu.addAction(QString("Exit"),this,SLOT(close()));
+    contextMenu.addAction("Exit",this,SLOT(close()));
+    contextMenu.addAction("Preference", this, SLOT(showPreference()));
     contextMenu.exec(mapToGlobal(pos));
+}
+
+void MainWindow::showPreference()
+{
+    Preference *pref = new Preference(this);
+    connect(pref, &Preference::accepted, this, &MainWindow::setColor);
+    pref->exec();
 }
 
 void MainWindow::mouseReleaseEvent(QMouseEvent *e)
