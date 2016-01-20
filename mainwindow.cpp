@@ -91,10 +91,14 @@ void MainWindow::showPreference()
 
 void MainWindow::mouseReleaseEvent(QMouseEvent *e)
 {
-if (e->button() == Qt::RightButton)
-    emit customContextMenuRequested(e->pos());
-else
-    QMainWindow::mouseReleaseEvent(e);
+    if (e->button()
+        #ifndef Q_OS_ANDROID
+            == Qt::RightButton
+        #endif
+            )
+        emit customContextMenuRequested(e->pos());
+    else
+        QMainWindow::mouseReleaseEvent(e);
 }
 
 void MainWindow::mouseMoveEvent(QMouseEvent *e)
@@ -104,7 +108,11 @@ void MainWindow::mouseMoveEvent(QMouseEvent *e)
 
 void MainWindow::mousePressEvent(QMouseEvent *e)
 {
+#ifdef Q_OS_ANDROID
+    this->mouseReleaseEvent(e);
+#else
     this->move(e->globalPos()-m_mousepos);
+#endif
 }
 
 void MainWindow::closeEvent(QCloseEvent *e)

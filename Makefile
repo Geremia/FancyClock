@@ -14,7 +14,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -g -std=c++0x -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I. -I../../../Qt5.5.1/5.5/gcc_64/include -I../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets -I../../../Qt5.5.1/5.5/gcc_64/include/QtGui -I../../../Qt5.5.1/5.5/gcc_64/include/QtCore -I. -I. -I../../../Qt5.5.1/5.5/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/alan/Qt5.5.1/5.5/gcc_64/bin/qmake
 DEL_FILE      = rm -f
@@ -180,7 +180,6 @@ DIST          = ../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/default_pre.prf \
 		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/resolve_config.prf \
 		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/default_post.prf \
-		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/c++11.prf \
 		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/warn_on.prf \
 		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/qt.prf \
 		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/resources.prf \
@@ -349,7 +348,6 @@ Makefile: FancyClock.pro ../../../Qt5.5.1/5.5/gcc_64/mkspecs/linux-g++/qmake.con
 		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/default_pre.prf \
 		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/resolve_config.prf \
 		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/default_post.prf \
-		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/c++11.prf \
 		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/warn_on.prf \
 		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/qt.prf \
 		../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/resources.prf \
@@ -489,7 +487,6 @@ Makefile: FancyClock.pro ../../../Qt5.5.1/5.5/gcc_64/mkspecs/linux-g++/qmake.con
 ../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/default_pre.prf:
 ../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/resolve_config.prf:
 ../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/default_post.prf:
-../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/c++11.prf:
 ../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/warn_on.prf:
 ../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/qt.prf:
 ../../../Qt5.5.1/5.5/gcc_64/mkspecs/features/resources.prf:
@@ -1017,6 +1014,48 @@ mainwindow.o: mainwindow.cpp ../../../Qt5.5.1/5.5/gcc_64/include/QtCore/QTime \
 		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qtabwidget.h \
 		ui_mainwindow.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/QLocale \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QGridLayout \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLCDNumber \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlcdnumber.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QMenuBar \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qmenubar.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QStatusBar \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QToolBar \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qtoolbar.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QWidget \
 		preference.h \
 		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdialog.h
@@ -1128,7 +1167,52 @@ preference.o: preference.cpp ../../../Qt5.5.1/5.5/gcc_64/include/QtCore/QSetting
 		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/qfiledevice.h \
 		../../../Qt5.5.1/5.5/gcc_64/include/QtGui/qvector2d.h \
 		../../../Qt5.5.1/5.5/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_preference.h
+		ui_preference.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/QVariant \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QAction \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qaction.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtGui/qicon.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QComboBox \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qcombobox.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QDialogButtonBox \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QFormLayout \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qformlayout.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLayout \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt5.5.1/5.5/gcc_64/include/QtWidgets/qlabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o preference.o preference.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
