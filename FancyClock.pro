@@ -21,7 +21,3 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     preference.ui
-
-LDFLAGS  += "-L/usr/lib64"
-
-CONFIG += c++11
